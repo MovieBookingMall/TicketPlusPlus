@@ -27,6 +27,6 @@ public class UserController {
             userList.add(new User(i,"张三"+i,20+i,"中国广州"));
         }
         model.addAttribute("users", userList);
-        return "/userList";
+        return "userList";
     }
 }
