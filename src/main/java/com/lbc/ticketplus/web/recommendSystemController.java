@@ -15,6 +15,6 @@ public class recommendSystemController {
     @ResponseBody
     public String doRecommend(String uId) {
         log.info("/doRecommend for " + uId);
-        return "hello world";
+        return "hello world<br/>古墓丽影\n海王\n复仇者联盟3";
     }
 }
