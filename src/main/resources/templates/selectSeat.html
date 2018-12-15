@@ -31,6 +31,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <!-- 引入tooltip需要文件 -->
+    <link href="../static/tooltip/tooltip.css" rel="stylesheet" type="text/css" />
+    <script src="../static/tooltip/tooltip.js" type="text/javascript"></script>
+
     <script async=""
             src="../static/selectSeat/a"></script>
     <script>"use strict";
@@ -108,7 +112,7 @@
 
 <div class="header">
     <div class="header-inner">
-        <a href="http://maoyan.com/" class="logo" data-act="icon-click"></a>
+        <!--<a href="http://maoyan.com/" class="logo" data-act="icon-click"></a>-->
         <div class="city-container" data-val="{currentcityid:20 }">
             <div class="city-selected">
                 <div class="city-name">
@@ -2720,7 +2724,7 @@
                             <span class="seat sold" data-column-id="07" data-row-id="6" data-no="0000000000000001-6-07"
                                   data-st="LK" data-act="seat-click" data-bid="b_s7eiiijf"></span>
                             <span class="seat sold" data-column-id="06" data-row-id="6" data-no="0000000000000001-6-06"
-                                  data-st="LK" data-act="seat-click" data-bid="b_s7eiiijf"></span>
+                                  data-st="LK" data-act="seat-click" data-bid="b_s7eiiijf" onmouseover="tooltip.ajax(this, 'doRecommend?uId=9')"></span>
                             <span class="seat selectable" data-column-id="05" data-row-id="6"
                                   data-no="0000000000000001-6-05" data-st="N" data-act="seat-click"
                                   data-bid="b_s7eiiijf"></span>
@@ -3040,37 +3044,6 @@
     </div>
 
 
-</div>
-
-<div class="footer" style="visibility: visible;">
-    <p class="friendly-links">
-        商务合作邮箱：v@maoyan.com
-        客服电话：10105335
-        违法和不良信息举报电话：4006018900
-        <br>
-        投诉举报邮箱：tousujubao@meituan.com
-        舞弊线索举报邮箱：wubijubao@maoyan.com
-    </p>
-    <p class="friendly-links">
-        友情链接 :
-        <a href="http://www.meituan.com/" data-query="utm_source=wwwmaoyan" target="_blank">美团网</a>
-        <span></span>
-        <a href="http://i.meituan.com/client" data-query="utm_source=wwwmaoyan" target="_blank">美团下载</a>
-        <span></span>
-        <a href="https://www.huanxi.com/" data-query="utm_source=maoyan_pc" target="_blank">欢喜首映</a>
-    </p>
-    <p>
-        ©2016
-        猫眼电影 maoyan.com
-        <a href="https://tsm.miit.gov.cn/pages/EnterpriseSearchList_Portal.aspx?type=0&amp;keyword=%E4%BA%ACICP%E8%AF%81160733%E5%8F%B7&amp;pageNo=1"
-           target="_blank">京ICP证160733号</a>
-        <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备16022489号-1</a>
-        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102003232" target="_blank">京公网安备
-            11010102003232号</a>
-        <a href="http://maoyan.com/about/licence" target="_blank">网络文化经营许可证</a>
-        <a href="http://www.meituan.com/about/rules" target="_blank">电子公告服务规则</a>
-    </p>
-    <p>北京猫眼文化传媒有限公司</p>
 </div>
 
 <script crossorigin="anonymous"

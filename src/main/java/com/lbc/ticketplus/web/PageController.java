@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PageController {
 
     private final Logger log = LoggerFactory.getLogger(PageController.class);
+
     @RequestMapping(value = "/hello")
     @ResponseBody
     public String helloWorld() {
@@ -20,22 +21,22 @@ public class PageController {
     }
 
     @RequestMapping("/index")
-    public String  getHomePage(Model model) {
+    public String getHomePage(Model model) {
         return "index";
     }
 
     @RequestMapping("/cinemaSelection")
-    public String  getCinemaSelectionPage(Model model) {
+    public String getCinemaSelectionPage(Model model) {
         return "cinemaSelection";
     }
 
     @RequestMapping("/cinemaInfo")
-    public String  getCinemaInfoPage(Model model) {
+    public String getCinemaInfoPage(Model model) {
         return "cinemaInfo";
     }
 
     @RequestMapping("/selectSeat")
-    public String  getSelectSeatPage(Model model) {
+    public String getSelectSeatPage(Model model) {
         return "selectSeat";
     }
 }
