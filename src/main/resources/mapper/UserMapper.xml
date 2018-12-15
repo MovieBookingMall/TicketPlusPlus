@@ -91,9 +91,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.lbc.ticketplus.entity.User">
-    insert into user (id, account, password, 
+    insert into user (account, password,
       name, age, address)
-    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.lbc.ticketplus.entity.User">
@@ -145,6 +145,12 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+  <select id="selectByAccountPass" parameterType="java.lang.String" resultType="java.lang.Integer">
+    SELECT count(*) from user where account = #{acc} and password = #{pass};
+  </select>
+
+
   <update id="updateByExampleSelective" parameterType="map">
     update user
     <set>

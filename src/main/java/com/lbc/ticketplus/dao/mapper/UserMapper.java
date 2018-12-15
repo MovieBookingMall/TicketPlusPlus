@@ -21,4 +21,6 @@ public interface UserMapper {
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int selectByAccountPass(@Param("acc") String acc,@Param("pass") String pass);
 }

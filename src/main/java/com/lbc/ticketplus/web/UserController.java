@@ -22,7 +22,7 @@ public class UserController {
     @RequestMapping("/{id}")
     public String  getUser(@PathVariable Integer id, Model model) {
 
-        model.addAttribute("user",new User(1,"123","123","fang",22,"广东广州"));
+        model.addAttribute("user",new User("123","123","fang",22,"广东广州"));
         return "/user/detail";
     }
 
@@ -30,7 +30,7 @@ public class UserController {
     public String  listUser(Model model) {
         List<User> userList = new ArrayList<User>();
         for (int i = 0; i <10; i++) {
-            userList.add(new User(1,"123","123","fang",22,"广东广州"));
+            userList.add(new User("456","456","fang",22,"广东广州"));
         }
         model.addAttribute("users", userList);
         return "userList";
@@ -40,6 +40,14 @@ public class UserController {
     @ResponseBody
     public String UserRegister(User user){
         String status = userService.UserRegister(user);
+        System.out.println(status);
+        return status;
+    }
+
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    public String UserLogin(User user){
+        String status = userService.UserLogin(user);
         System.out.println(status);
         return status;
     }

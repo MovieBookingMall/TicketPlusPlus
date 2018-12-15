@@ -16,7 +16,7 @@ public class UserControllerTest {
 
 //    @Test
     public void UserRegisterTest() {
-        User user = new User(1,"123","123","fang",22,"广东广州");
+        User user = new User("456  ","456","fang",22,"广东广州");
 
 
         String status = userController.UserRegister(user);
@@ -26,7 +26,7 @@ public class UserControllerTest {
 
     @Test
     public void UserLoginTest() {
-        User user = new User(1,"123","123","fang",22,"广东广州");
+        User user = new User("456","456","fang",22,"广东广州");
 
 
         String status = userController.UserLogin(user);
