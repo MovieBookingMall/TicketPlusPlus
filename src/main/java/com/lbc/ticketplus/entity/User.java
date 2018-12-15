@@ -13,6 +13,15 @@ public class User {
 
     private String address;
 
+    public User(Integer id, String account, String password, String name, Integer age, String address) {
+        this.id = id;
+        this.account = account;
+        this.password = password;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
     public Integer getId() {
         return id;
     }

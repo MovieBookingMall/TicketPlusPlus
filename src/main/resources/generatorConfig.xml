@@ -9,7 +9,7 @@
         </commentGenerator>
         <!--需要配置数据库连接-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.199.190:3306/ticket_plus"
+                        connectionURL="jdbc:mysql://192.168.199.190:3306/ticket_plus?serverTimezone=GMT%2B8"
                         userId="liubaichuan"
                         password="root">
         </jdbcConnection>
