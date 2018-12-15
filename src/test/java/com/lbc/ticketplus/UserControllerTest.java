@@ -13,12 +13,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserControllerTest {
     @Autowired
     private UserController userController;
-    @Test
+
+//    @Test
     public void UserRegisterTest() {
         User user = new User(1,"123","123","fang",22,"广东广州");
 
 
         String status = userController.UserRegister(user);
+        System.out.println(status);
+    }
+
+
+    @Test
+    public void UserLoginTest() {
+        User user = new User(1,"123","123","fang",22,"广东广州");
+
+
+        String status = userController.UserLogin(user);
         System.out.println(status);
     }
 }
