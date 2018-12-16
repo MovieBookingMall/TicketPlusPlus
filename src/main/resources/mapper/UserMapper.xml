@@ -150,6 +150,11 @@
     SELECT count(*) from user where account = #{acc} and password = #{pass};
   </select>
 
+  <select id="countUserByAccount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) from user where account = #{acc};
+  </select>
+
+
 
   <update id="updateByExampleSelective" parameterType="map">
     update user
