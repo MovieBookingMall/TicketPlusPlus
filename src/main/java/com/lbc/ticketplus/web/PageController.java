@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -24,8 +25,20 @@ public class PageController {
         return "index";
     }
 
-    @RequestMapping("/cinemaSelection")
-    public String  getCinemaSelectionPage(Model model) {
+    @RequestMapping(value="/cinemaSelection", method={RequestMethod.GET})
+    public String  getCinemaSelectionPage(Model model, String name) {
+        //修改HTML中某个标签为参数值
+        //写接口，传入电影名，返回数据
+        // name为本函数中的形参名，也是在url中的参数名. "test_name"为传到thymeleaf后的参数名
+        model.addAttribute("movie_name",name);
+        //System.out.println("name:"+name);
+        String time="";
+
+        if(name.equals("test"))
+        {
+            time="100";
+        }
+        model.addAttribute("time",time);
         return "cinemaSelection";
     }
 

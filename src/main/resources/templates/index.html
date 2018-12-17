@@ -368,13 +368,13 @@
                                     </li>
                                     <li class="title">
                                         <a onclick="moreurl(this, {from:'mv_a_tl'})"
-                                           href="https://cinemaSelection">毒液：致命守...</a>
+                                           href="#">毒液：致命守...</a>
                                     </li>
                                     <li class="rating">
                                         <span class="rating-star allstar40"></span><span class="subject-rate">7.3</span>
                                     </li>
                                     <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})"
-                                                                    href="/cinemaSelection"
+                                                                    href="/cinemaSelection?name=毒液"
                                                                     target="_blank">选座购票</a></span></li>
                                 </ul>
 
@@ -404,7 +404,7 @@
                                         <span class="rating-star allstar35"></span><span class="subject-rate">6.8</span>
                                     </li>
                                     <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})"
-                                                                    href="#"
+                                                                    href="/cinemaSelection?name=憨豆特工3"
                                                                     target="_blank">选座购票</a></span></li>
                                 </ul>
 
@@ -3197,6 +3197,12 @@
 <script type="text/javascript" src="../static/index/do.js"
         data-cfg-autoload="false"></script>
 <script type="text/javascript" src="../static/index/dialog.js"></script>
+
+<!-- generate url 为ticket-btn的类添加href属性-->
+<script type="text/javascript">
+
+    var url_prefix = "";
+</script>
 <script type="text/javascript">
     var HTTPS_DB = 'https://www.douban.com';
     var account_pop = {
