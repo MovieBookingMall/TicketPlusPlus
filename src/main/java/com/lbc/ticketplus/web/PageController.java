@@ -39,4 +39,9 @@ public class PageController {
     public String getSelectSeatPage(Model model) {
         return "selectSeat";
     }
+
+    @RequestMapping("/alipay")
+    public String getAlipayPage(Model model) {
+        return "alipay";
+    }
 }
