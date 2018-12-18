@@ -44,4 +44,9 @@ public class PageController {
     public String getAlipayPage(Model model) {
         return "alipay";
     }
+
+    @RequestMapping("/loginPage")
+    public String getLoginPage(Model model) {
+        return "loginPage";
+    }
 }
