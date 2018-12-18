@@ -14,7 +14,7 @@ public class UserControllerTest {
     @Autowired
     private UserController userController;
 
-//    @Test
+    @Test
     public void UserRegisterTest() {
         User user = new User("456  ","456","fang",22,"广东广州");
 
@@ -24,12 +24,10 @@ public class UserControllerTest {
     }
 
 
-    @Test
-    public void UserLoginTest() {
-        User user = new User("456","456","fang",22,"广东广州");
-
-
-        String status = userController.UserLogin(user);
-        System.out.println(status);
-    }
+//    @Test
+//    public void UserLoginTest() {
+//        User user = new User("123","456","fang",22,"广东广州");
+//        String status = userController.UserLogin(user);
+//        System.out.println(status);
+//    }
 }

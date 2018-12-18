@@ -23,4 +23,7 @@ public interface UserMapper {
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     int selectByAccountPass(@Param("acc") String acc,@Param("pass") String pass);
+
+    int countUserByAccount(@Param("acc")String acc);
 }
+

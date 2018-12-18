@@ -2,6 +2,7 @@ package com.lbc.ticketplus.web;
 
 import com.lbc.ticketplus.entity.User;
 import com.lbc.ticketplus.service.UserService;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,12 +50,36 @@ public class UserController {
         return status;
     }
 
-    @RequestMapping(value = "/login")
-    @ResponseBody
-    public String UserLogin(User user){
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+//    @ResponseBody
+    public String UserLogin(User user, HttpServletRequest request){
         String status = userService.UserLogin(user);
         System.out.println(status);
+        if("200".equals(status)){
+            request.getSession().setAttribute("userName",user.getName());
+        }
         return status;
     }
+
+
+    @RequestMapping(value = "/userInfo")
+    @ResponseBody
+    public void GetUserInfoBySession(HttpServletRequest request,HttpServletResponse response){
+        response.setContentType("text/html;charset=utf-8");
+        System.out.println("hhhhhhh");
+        try {
+            PrintWriter out = response.getWriter();
+            request.getSession().setAttribute("userName","fang");
+            String userName = (String) request.getSession().getAttribute("userName");
+            System.out.println(userName);
+            out.write(userName);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }
