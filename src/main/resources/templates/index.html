@@ -146,7 +146,7 @@
     <div class="bd">
 
         <div class="top-nav-info">
-            <a href="/login" class="welcome">登录</a>
+            <a href="/loginPage" class="welcome">登录</a>
             <a href="#">注册</a>
         </div>
 
@@ -164,9 +164,7 @@
                 $(".welcome")[0].innerHTML=data+"欢迎您！";
             },
             error:function (data) {
-                alert(data);
-                alert("hhhhh");
-                alert("系统出错");
+                $(".welcome")[0].innerHTML="请";
             }
         })
     })

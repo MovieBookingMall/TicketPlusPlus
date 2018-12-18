@@ -51,12 +51,15 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-//    @ResponseBody
+    @ResponseBody
     public String UserLogin(User user, HttpServletRequest request){
+//        System.out.println("123456");
+//        System.out.println(user.getAccount()+","+user.getPassword());
         String status = userService.UserLogin(user);
-        System.out.println(status);
+//        System.out.println(status);
         if("200".equals(status)){
-            request.getSession().setAttribute("userName",user.getName());
+//            System.out.println("已存session"+user.getAccount());
+            request.getSession().setAttribute("userName",user.getAccount());
         }
         return status;
     }
@@ -69,9 +72,9 @@ public class UserController {
         System.out.println("hhhhhhh");
         try {
             PrintWriter out = response.getWriter();
-            request.getSession().setAttribute("userName","fang");
+//            request.getSession().setAttribute("userName","fang");
             String userName = (String) request.getSession().getAttribute("userName");
-            System.out.println(userName);
+//            System.out.println(userName);
             out.write(userName);
             out.flush();
             out.close();
