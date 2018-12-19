@@ -146,12 +146,32 @@
     <div class="bd">
 
         <div class="top-nav-info">
-            <a href="#">登录</a>
+            <a href="/loginPage" class="welcome">登录</a>
             <a href="#">注册</a>
         </div>
 
     </div>
 </div>
+
+<script src="../static/index/real_jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            url:"/user/userInfo",
+            type:"post",
+            success:function (data) {
+                $(".welcome")[0].innerHTML=data+"欢迎您！";
+            },
+            error:function (data) {
+                $(".welcome")[0].innerHTML="请";
+            }
+        })
+    })
+</script>
+
+
+
 <script>
     ;window._GLOBAL_NAV = {
         DOUBAN_URL: "https://www.douban.com",

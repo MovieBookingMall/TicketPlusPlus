@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PageController {
 
     private final Logger log = LoggerFactory.getLogger(PageController.class);
+
     @RequestMapping(value = "/hello")
     @ResponseBody
     public String helloWorld() {
@@ -21,19 +22,18 @@ public class PageController {
     }
 
     @RequestMapping("/index")
-    public String  getHomePage(Model model) {
+    public String getHomePage(Model model) {
         return "index";
     }
+
 
     @RequestMapping(value="/cinemaSelection", method={RequestMethod.GET})
     public String  getCinemaSelectionPage(Model model, String name) {
         //修改HTML中某个标签为参数值
         //写接口，传入电影名，返回数据
-        // name为本函数中的形参名，也是在url中的参数名. "test_name"为传到thymeleaf后的参数名
+        // name为本函数中的形参名，也是在url中的参数名. "movie_name"为传到thymeleaf后的参数名
         model.addAttribute("movie_name",name);
-        //System.out.println("name:"+name);
         String time="";
-
         if(name.equals("test"))
         {
             time="100";
@@ -43,12 +43,22 @@ public class PageController {
     }
 
     @RequestMapping("/cinemaInfo")
-    public String  getCinemaInfoPage(Model model) {
+    public String getCinemaInfoPage(Model model) {
         return "cinemaInfo";
     }
 
     @RequestMapping("/selectSeat")
-    public String  getSelectSeatPage(Model model) {
+    public String getSelectSeatPage(Model model) {
         return "selectSeat";
+    }
+
+    @RequestMapping("/alipay")
+    public String getAlipayPage(Model model) {
+        return "alipay";
+    }
+
+    @RequestMapping("/loginPage")
+    public String getLoginPage(Model model) {
+        return "loginPage";
     }
 }
