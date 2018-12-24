@@ -62,4 +62,11 @@ public class UserServiceImp implements UserService {
         System.out.println("密码错误");
         return "300";
     }
+
+    @Override
+    public int getIdByAccount(String userAcc) {
+        int id = userMapper.getIdByAccount(userAcc);
+        System.out.println(id);
+        return id;
+    }
 }

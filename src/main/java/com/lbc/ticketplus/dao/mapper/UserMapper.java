@@ -25,5 +25,7 @@ public interface UserMapper {
     int selectByAccountPass(@Param("acc") String acc,@Param("pass") String pass);
 
     int countUserByAccount(@Param("acc")String acc);
+
+    int getIdByAccount(@Param("acc")String acc);
 }
 

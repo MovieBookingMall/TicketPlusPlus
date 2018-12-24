@@ -9,4 +9,6 @@ public interface UserService {
 
     //用户登录
     public String UserLogin(User user);
+
+    public int getIdByAccount(String userAcc);
 }

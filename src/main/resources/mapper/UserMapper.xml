@@ -155,6 +155,10 @@
   </select>
 
 
+  <select id="getIdByAccount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select id from user where account = #{acc};
+  </select>
+
 
   <update id="updateByExampleSelective" parameterType="map">
     update user

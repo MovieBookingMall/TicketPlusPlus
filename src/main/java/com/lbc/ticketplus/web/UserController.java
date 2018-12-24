@@ -60,6 +60,11 @@ public class UserController {
         if("200".equals(status)){
 //            System.out.println("已存session"+user.getAccount());
             request.getSession().setAttribute("userName",user.getAccount());
+
+            //获取用户的id
+            int userId = userService.getIdByAccount(user.getAccount());
+            request.getSession().setAttribute("userId",userId);
+            System.out.println(userId);
         }
         return status;
     }
@@ -74,8 +79,10 @@ public class UserController {
             PrintWriter out = response.getWriter();
 //            request.getSession().setAttribute("userName","fang");
             String userName = (String) request.getSession().getAttribute("userName");
+//            int userId =  (Integer) request.getSession().getAttribute("userId");
 //            System.out.println(userName);
             out.write(userName);
+//            out.write(userId+"");
             out.flush();
             out.close();
         } catch (IOException e) {
