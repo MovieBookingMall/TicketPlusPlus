@@ -8,5 +8,5 @@ public interface RecommendSystemService {
 
     public List<WatchRecord> findWatchRecordOfUers(Integer user_id);
 
-    public String doRecommend(String curUserID, String toRecUserId);
+    public String doRecommend(String curUserID, String toRecUserID);
 }

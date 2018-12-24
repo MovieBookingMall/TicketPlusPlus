@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class RecommendSystemController {
 
@@ -18,9 +20,15 @@ public class RecommendSystemController {
 
     @RequestMapping(value = "/doRecommend")
     @ResponseBody
-    public String doRecommend(String uId) {
-        log.info("/doRecommend for " + uId);
-        return recommendSystemService.doRecommend("1", "2");
+    public String doRecommend(String uId,  HttpServletRequest req) {
+        Integer curUserID = (Integer) req.getSession().getAttribute("userId");
+        if(null == curUserID || 0 == curUserID){
+            log.info("user did not login!");
+            return "请登录获取推荐信息。";
+        }
+        log.info("toRedUserId: " + uId  + "; curUserID: " + curUserID);
+        String strCurUserID = String.valueOf(curUserID);
+        return recommendSystemService.doRecommend(strCurUserID, uId);
     }
 
     @RequestMapping(value = "/testre")
