@@ -40,6 +40,8 @@
         <!--<table tableName="specialty" domainObjectName="Specialty"></table>-->
         <!--<table tableName="student" domainObjectName="Student"></table>-->
         <!--<table tableName="teacher" domainObjectName="Teacher"></table>-->
-        <table tableName="User" domainObjectName="User"></table>
+        <!--<table tableName="User" domainObjectName="User"></table>-->
+        <table tableName="Movie" domainObjectName="Movie"></table>
+
     </context>
 </generatorConfiguration>
